@@ -1,12 +1,18 @@
 import { shallowMount } from '@vue/test-utils';
-import HelloWorld from '@/components/HelloWorld.vue';
+import c4it from '@c4it/ui';
+import App from '@/App.vue';
+import Vue from 'vue';
+// import '@c4it/ui/dist/index.css';
+// import '@/icons';
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message';
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg },
-    });
-    expect(wrapper.text()).toMatch(msg);
+Vue.use(c4it.Button);
+Vue.use(c4it.SvgIcon);
+
+describe('App.vue', () => {
+  it('test App.vue background color', () => {
+    // const msg = 'new message';
+    const wrapper = shallowMount(App);
+    console.log(wrapper.html());
+    // expect(wrapper.text()).toMatch();
   });
 });
